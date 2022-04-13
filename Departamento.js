@@ -7,12 +7,12 @@ export default class Departamento {
   // indica que ele é privado. Também deve-se colocar a presença dele destacada, como está abaixo.
   //
   #sigla;
-  #numEmpregados;
   #nome;
+  #numEmpregados;
 
   //-----------------------------------------------------------------------------------------//
 
-  constructor(sigla, numEmpregados, nome, email, telefone) {
+  constructor(sigla, nome, numEmpregados) {
     this.setSigla(sigla);
     this.setNumEmpregados(numEmpregados);
     this.setNome(nome); 
