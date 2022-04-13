@@ -70,7 +70,7 @@ export default class ViewerDepartamento {
     this.configurarNavegacao( pos <= 1 , pos == qtde );   
 
     if(departamento == null) {
-      this.tfsigla.value = "";
+      this.tfSigla.value = "";
       this.tfNome.value       = "";
       this.tfNumEmpregados.value      = "";
       this.divAviso.innerHTML = " Número de Departamentos: 0";
