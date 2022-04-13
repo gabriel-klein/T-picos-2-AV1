@@ -30,7 +30,7 @@ export default class ViewerDepartamento {
 
    this.tfSigla = this.obterElemento('tfSigla');
    this.tfNome       = this.obterElemento('tfNome');
-   this.tfNumEmpregado      = this.obterElemento('tfNumEmpregado');
+   this.tfNumEmpregados      = this.obterElemento('tfNumEmpregados');
       
     this.btPrimeiro.onclick = fnBtPrimeiro; 
     this.btProximo.onclick = fnBtProximo; 
@@ -72,12 +72,12 @@ export default class ViewerDepartamento {
     if(departamento == null) {
       this.tfsigla.value = "";
       this.tfNome.value       = "";
-      this.tfNumEmpregado.value      = "";
+      this.tfNumEmpregados.value      = "";
       this.divAviso.innerHTML = " Número de Departamentos: 0";
     } else {
       this.tfSigla.value = departamento.getSigla();
       this.tfNome.value      = departamento.getNome();
-      this.tfNumEmpregado.value     = departamento.getNumEmpregado();
+      this.tfNumEmpregados.value     = departamento.getNumEmpregados();
       this.divAviso.innerHTML = "Posição: " + pos + " | Número de Departamentos: " + qtde;
     }
   }
@@ -101,7 +101,7 @@ export default class ViewerDepartamento {
     if(operacao != Status.EXCLUINDO) {
       this.tfSigla.disabled = false;
       this.tfNome.disabled = false;
-      this.tfNumEmpregado.disabled = false;
+      this.tfNumEmpregados.disabled = false;
       this.divAviso.innerHTML = "";      
     } else {
       this.divAviso.innerHTML = "Deseja excluir este registro?";      
@@ -110,7 +110,7 @@ export default class ViewerDepartamento {
       this.tfSigla.disabled = false;
       this.tfSigla.value = "";
       this.tfNome.value = "";
-      this.tfNumEmpregado.value = "";
+      this.tfNumEmpregados.value = "";
     }
   }
 
@@ -122,7 +122,7 @@ export default class ViewerDepartamento {
     this.divComandos.hidden = false;
     this.divDialogo.hidden = true; 
     this.tfNome.disabled = true;
-    this.tfNumEmpregado.disabled = true;
+    this.tfNumEmpregados.disabled = true;
     
   }
 
@@ -195,12 +195,12 @@ function fnBtExcluir() {
 function fnBtOk() {
   const sigla = this.viewer.tfSigla.value;
   const nome = this.viewer.tfNome.value;
-  const NumEmpregado = this.viewer.tfNumEmpregado.value;
+  const NumEmpregados = this.viewer.tfNumEmpregados.value;
   
     
   // Como defini que o método "efetivar" é um dos métodos incluir, excluir ou alterar
   // não estou precisando colocar os ninhos de IF abaixo.
-  this.viewer.getCtrl().efetivar(sigla, nome, NumEmpregado); 
+  this.viewer.getCtrl().efetivar(sigla, nome, NumEmpregados); 
 
   // if(this.viewer.getCtrl().getStatus() == Status.INCLUINDO) {
   //  this.viewer.getCtrl().fnEfetivar(matricula, cpf, nome, email, telefone); 
