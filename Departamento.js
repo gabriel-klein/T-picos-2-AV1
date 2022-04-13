@@ -7,14 +7,14 @@ export default class Departamento {
   // indica que ele é privado. Também deve-se colocar a presença dele destacada, como está abaixo.
   //
   #sigla;
-  #numeroDeEmpregados;
+  #numEmpregados;
   #nome;
 
   //-----------------------------------------------------------------------------------------//
 
-  constructor(sigla, numeroDeEmpregados, nome, email, telefone) {
+  constructor(sigla, numEmpregados, nome, email, telefone) {
     this.setSigla(sigla);
-    this.setNumeroDeEmpregados(numeroDeEmpregados);
+    this.setNumEmpregados(numEmpregados);
     this.setNome(nome); 
   }
   
@@ -34,16 +34,16 @@ export default class Departamento {
   
   //-----------------------------------------------------------------------------------------//
 
-  getNumeroDeEmpregados() {
-    return this.#numeroDeEmpregados;
+  getNumEmpregados() {
+    return this.#numEmpregados;
   }
   
   //-----------------------------------------------------------------------------------------//
 
-  setNumeroDeEmpregados(numeroDeEmpregados) {
-    if(!Departamento.validarNumeroDeEmpregados(numeroDeEmpregados))
-      throw new ModelError("CPF Inválido: " + numeroDeEmpregados);
-    this.#numeroDeEmpregados = numeroDeEmpregados;
+  setNumEmpregados(numEmpregados) {
+    if(!Departamento.validarNumEmpregados(numEmpregados))
+      throw new ModelError("Numero de Empregado Inválido: " + numEmpregados);
+    this.#numEmpregados = numEmpregados;
   }
   
   //-----------------------------------------------------------------------------------------//
@@ -65,7 +65,7 @@ export default class Departamento {
   toJSON() {
     return '{' +
                '"sigla" : "'+ this.#sigla + '",' +
-               '"numeroDeEmpregados" :  "'     + this.#numeroDeEmpregados       + '",' +
+               '"numEmpregados" :  "'     + this.#numEmpregados       + '",' +
                '"nome" : "'     + this.#nome      + '" ' + 
            '}';  
   }
@@ -73,7 +73,7 @@ export default class Departamento {
   //-----------------------------------------------------------------------------------------//
 
   static assign(obj) {
-    return new Departamento(obj.sigla, obj.numeroDeEmpregados, obj.nome);
+    return new Departamento(obj.sigla, obj.numEmpregados, obj.nome);
   }
 
   //-----------------------------------------------------------------------------------------//
@@ -119,7 +119,7 @@ export default class Departamento {
         return true;
       }
 
-    static validarNumeroDeEmpregados(sigla) {
+    static validarNumEmpregados(sigla) {
         if (sigla.length > 0) 
           return true;
         return false;
