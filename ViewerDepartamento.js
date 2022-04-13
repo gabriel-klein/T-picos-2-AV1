@@ -28,9 +28,9 @@ export default class ViewerDepartamento {
     this.btOk        = this.obterElemento('btOk');
     this.btCancelar  = this.obterElemento('btCancelar');
 
-   // this.tfSigla = this.obterElemento('tfSigla');
-   // this.tfNome       = this.obterElemento('tfNome');
-   // this.tfNumEmpregado      = this.obterElemento('tfNumEmpregado');
+   this.tfSigla = this.obterElemento('tfSigla');
+   this.tfNome       = this.obterElemento('tfNome');
+   this.tfNumEmpregado      = this.obterElemento('tfNumEmpregado');
       
     this.btPrimeiro.onclick = fnBtPrimeiro; 
     this.btProximo.onclick = fnBtProximo; 
