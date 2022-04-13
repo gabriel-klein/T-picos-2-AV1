@@ -73,7 +73,7 @@ export default class Departamento {
   //-----------------------------------------------------------------------------------------//
 
   static assign(obj) {
-    return new Departamento(obj.sigla, obj.numEmpregados, obj.nome);
+    return new Departamento(obj.sigla, obj.nome, obj.numEmpregados);
   }
 
   //-----------------------------------------------------------------------------------------//
