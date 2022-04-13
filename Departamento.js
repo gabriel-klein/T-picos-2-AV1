@@ -89,7 +89,7 @@ export default class Departamento {
       return false;
     if (nome.length > 40) 
       return false;
-    const padraoNome = /[A-Z][a-z] */;
+    const padraoNome = /[A-Z] */;
     if (!padraoNome.test(nome)) 
       return false;
     return true;
@@ -108,8 +108,8 @@ export default class Departamento {
         return true;
       }
 
-    static validarNumEmpregados(sigla) {
-        if (sigla.length > 0) 
+    static validarNumEmpregados(numEmpregados) {
+        if (numEmpregados.length > 0) 
           return true;
         return false;
     }
@@ -119,6 +119,7 @@ export default class Departamento {
   mostrar() {
     let texto = "Sigla: " + this.sigla + "\n";
     texto += "Nome: " + this.nome + "\n";
+    texto += "Numero de empregado: " + this.numEmpregados + "\n";
       
     alert(texto);
     alert(JSON.stringify(this));
