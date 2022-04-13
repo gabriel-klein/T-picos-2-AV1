@@ -3,7 +3,7 @@
 import ModelError from "/ModelError.js";
 import Departamento from "/Departamento.js";
 
-export default class DAODepartamento {
+export default class DaoDepartamento {
 
     //-----------------------------------------------------------------------------------------//
 
