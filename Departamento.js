@@ -89,7 +89,7 @@ export default class Departamento {
       return false;
     if (nome.length > 40) 
       return false;
-    const padraoNome = /[A-Z] */;
+    const padraoNome = /[A-Z][a-z] */;
     if (!padraoNome.test(nome)) 
       return false;
     return true;
@@ -102,7 +102,7 @@ export default class Departamento {
           return false;
         if (sigla.length > 2) 
           return false;
-        const padraoSigla = /[A-Z][a-z] */;
+        const padraoSigla = /[A-Z] */;
         if (!padraoSigla.test(sigla)) 
           return false;
         return true;
