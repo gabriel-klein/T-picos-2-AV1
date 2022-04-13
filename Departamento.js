@@ -28,7 +28,7 @@ export default class Departamento {
 
   setSigla(sigla) {
     if(!Departamento.validarSigla(sigla))
-      throw new ModelError("Matrícula Inválida: " + sigla);
+      throw new ModelError("Sigla Inválida: " + sigla);
     this.#sigla = sigla;
   }
   
@@ -80,17 +80,6 @@ export default class Departamento {
   
   static deassign(obj) { 
     return JSON.parse(obj.toJSON());
-  }
-
-  //-----------------------------------------------------------------------------------------//
-
-  static validarSigla(sigla) {
-    if(sigla == null || sigla == "" || sigla == undefined)
-      return false;
-    const padraoSigla = /[0-9]/;
-    if (!padraoSigla.test(sigla))
-      return false;
-    return true;
   }
 
   //-----------------------------------------------------------------------------------------//
