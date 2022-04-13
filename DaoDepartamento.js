@@ -18,8 +18,8 @@ export default class DaoDepartamento {
     *  Devolve uma Promise com a referência para o BD
     */ 
     async obterConexao() {
-        if(DAODepartamento.conexao == null) {
-            DAODepartamento.conexao = new Promise(function(resolve, reject) {
+        if(DaoDepartamento.conexao == null) {
+            DaoDepartamento.conexao = new Promise(function(resolve, reject) {
             let requestDB = window.indexedDB.open("DepartamentoDB", 1); 
 
             requestDB.onupgradeneeded = (event) => {
@@ -44,7 +44,7 @@ export default class DaoDepartamento {
             };
         });
         }
-        return await DAODepartamento.conexao;
+        return await DaoDepartamento.conexao;
     }
 
     //-----------------------------------------------------------------------------------------//
