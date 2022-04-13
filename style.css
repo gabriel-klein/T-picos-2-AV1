@@ -1,4 +1,3 @@
-/* Our default values set as CSS variables */
 :root {
   --color-bg: #69F7BE;
   --color-text-main: #000000;
@@ -92,4 +91,3 @@ button[disabled]{
 div {
   margin: 12px 0 12px 0;  
 }
-
