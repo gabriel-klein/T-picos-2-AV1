@@ -98,20 +98,36 @@ export default class Medico {
     //-----------------------------------------------------------------------------------------//
 
     static validarCrm(crm) {
-//         if(sigla == null || sigla == "" || sigla == undefined)
-//           return false;
-//         if (sigla.length > 2) 
-//           return false;
-//         const padraoSigla = /[A-Z] */;
-//         if (!padraoSigla.test(sigla)) 
-//           return false;
-//         return true;
-//       }
+        if(sigla == null || sigla == "" || sigla == undefined)
+          return false;
 
-//     static validarNumEmpregados(numEmpregados) {
-//         if (numEmpregados.length > 0) 
-//           return true;
-//         return false;
+        let dot = crm.split("/");
+
+        if(dot.length != 2)
+          return false;
+        
+        if(dot[0].length < 4 || dot[0].length > 10)
+          return false;
+        
+        if (dot[1].length > 2) 
+          return false;
+
+        const padraoSigla = /[A-Z] */;
+        
+        if (!padraoSigla.test(dot[1])) 
+          return false;
+
+        return true;
+      }
+
+    static validarEspecialidade(especialidade) {
+      if(especialidade.length <= 0 || especialidade.length > 40)
+        return false;
+      
+      if(/\d/.test(especialidade))
+        return false;
+      
+      return true;
     }
 
   //-----------------------------------------------------------------------------------------//
